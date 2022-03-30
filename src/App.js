@@ -1,10 +1,16 @@
-import './App.css';
-import { Input } from './Input';
+import "./App.css";
+import { Card } from "./Card";
+import { Input } from "./Input";
 
 function App() {
   return (
     <div className="Main">
-      <Input></Input>
+      <Input />
+      <div className="CardList">
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 }
