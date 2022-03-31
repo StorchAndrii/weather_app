@@ -1,33 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../App.css";
 
-export const Input = () => {
-  const currentDate = new Date().toDateString();
-
+const InputTag = () => {
+  const [inputValue, setinputValue] = useState("empty");
   const handleOnChange = (event) => {
-    console.log("event", event);
+    setinputValue(event.target.value);
   };
 
-  const handleOnClick = (value) => () => {
-    console.log("handleOnClick ");
-    console.log(value);
-  };
-
-  const handSubmit = (event) => {
-    event.preventDefault();
-    console.log("handSubmit ");
-    console.log(handSubmit);
-  };
+  console.log("render");
 
   return (
-    <div className="InputWrap">
-      <form onSubmit={handSubmit}>
-        <input className="Input" onChange={handleOnChange} />
-        <button className="Button" onClick={handleOnClick(currentDate)}>
-          +
-        </button>
-      </form>
-    </div>
+    <input className="Input" onChange={handleOnChange} value={inputValue} />
   );
 };
+
+const Button = () => <button className="Button">+</button>;
+
+export const Input = () => (
+  <div className="InputWrap">
+    <InputTag />
+    <Button />
+  </div>
+);
