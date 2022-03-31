@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import "../App.css";
 
 export const Input = ({ setiCitiesList }) => {
-  const [inputValue, setinputValue] = useState("empty");
+  const [inputValue, setinputValue] = useState("");
+
+  const inputRef = useRef(null);
 
   const handleOnClick = () => {
+    console.log("inputRef", inputRef);
     setiCitiesList((currentArray) => [...currentArray, inputValue]);
+    setinputValue("");
+    inputRef.current.focus();
   };
 
   const handleOnChange = (event) => {
@@ -15,11 +20,15 @@ export const Input = ({ setiCitiesList }) => {
 
   return (
     <div className="InputWrap">
-      <input className="Input" onChange={handleOnChange} value={inputValue} />
+      <input
+        className="Input"
+        onChange={handleOnChange}
+        value={inputValue}
+        ref={inputRef}
+      />
       <button className="Button" onClick={handleOnClick}>
         +
       </button>
-      ;
     </div>
   );
 };
