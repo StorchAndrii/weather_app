@@ -2,14 +2,14 @@ import React, { useState, useRef } from "react";
 
 import "../App.css";
 
-export const Input = ({ setiCitiesList }) => {
+export const Input = ({ setCitiesList }) => {
   const [inputValue, setinputValue] = useState("");
 
   const inputRef = useRef(null);
 
   const handleOnClick = () => {
     console.log("inputRef", inputRef);
-    setiCitiesList((currentArray) => [...currentArray, inputValue]);
+    setCitiesList((currentArray) => [...currentArray, inputValue]);
     setinputValue("");
     inputRef.current.focus();
   };
