@@ -2,24 +2,24 @@ import React, { useState } from "react";
 
 import "../App.css";
 
-const InputTag = () => {
+export const Input = ({ setiCitiesList }) => {
   const [inputValue, setinputValue] = useState("empty");
+
+  const handleOnClick = () => {
+    setiCitiesList((currentArray) => [...currentArray, inputValue]);
+  };
+
   const handleOnChange = (event) => {
     setinputValue(event.target.value);
   };
 
-  console.log("render");
-
   return (
-    <input className="Input" onChange={handleOnChange} value={inputValue} />
+    <div className="InputWrap">
+      <input className="Input" onChange={handleOnChange} value={inputValue} />
+      <button className="Button" onClick={handleOnClick}>
+        +
+      </button>
+      ;
+    </div>
   );
 };
-
-const Button = () => <button className="Button">+</button>;
-
-export const Input = () => (
-  <div className="InputWrap">
-    <InputTag />
-    <Button />
-  </div>
-);
