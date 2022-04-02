@@ -28,10 +28,10 @@ export const Input = ({ setCitiesList }) => {
     [inputValue]
   );
 
-  console.log("someValue", someValue);
-  console.log("oldInputValue", oldInputValue);
-  console.log("from render", `${inputValue}_${Math.random()}`);
-  console.log("inputValue", inputValue);
+  // console.log("someValue", someValue);
+  // console.log("oldInputValue", oldInputValue);
+  // console.log("from render", `${inputValue}_${Math.random()}`);
+  // console.log("inputValue", inputValue);
 
   return (
     <div className="InputWrap">
