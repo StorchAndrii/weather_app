@@ -56,6 +56,15 @@
   margin-left: 0;
 }
 
+.ActionsButton{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.DeleteCity{
+  background: #fff;
+}
+
 .MainInfo {
   display: flex;
   flex-direction: column;
@@ -89,3 +98,4 @@
 .Information > div {
   margin-top: 4px;
 }
+
