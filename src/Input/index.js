@@ -1,7 +1,5 @@
 import React, { useState, useRef, useMemo } from "react";
 
-import "../App.css";
-
 export const Input = ({ setCitiesList }) => {
   const [inputValue, setInputValue] = useState("");
   const [someValue, setSomeValue] = useState(0);
@@ -9,13 +7,14 @@ export const Input = ({ setCitiesList }) => {
   const inputRef = useRef(null);
 
   const handleOnClick = () => {
-    console.log("inputRef", inputRef);
+    // console.log("inputRef", inputRef);
     setCitiesList((currentArray) => [...currentArray, inputValue]);
     setInputValue("");
     inputRef.current.focus();
   };
 
   const handleOnChange = (event) => {
+    // console.log(event);
     setInputValue(event.target.value);
   };
 

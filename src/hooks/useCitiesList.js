@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useCitiesList = () => {
-    const [citiesList, setCitiesList] = useState(
-        JSON.parse(localStorage.getItem("citiesList")) || []
-      );
-      useEffect(() => {
-        localStorage.setItem("citiesList", JSON.stringify(citiesList));
-      }, [citiesList]);
-      return [citiesList, setCitiesList]
-}
+  const [citiesList, setCitiesList] = useState(
+    JSON.parse(localStorage.getItem("citiesList")) || []
+  );
+  useEffect(() => {
+    localStorage.setItem("citiesList", JSON.stringify(citiesList));
+  }, [citiesList]);
+  return [citiesList, setCitiesList];
+};
