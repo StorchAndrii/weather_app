@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { API_KEY } from "../settings.js";
 
 export const useWeather = (city) => {

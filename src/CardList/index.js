@@ -1,10 +1,7 @@
 import React from "react";
-import { Card } from "../Card";
-
-import "../App.css";
+import { Card } from "../Card/index.js";
 
 export const CardList = ({ citiesList }) => {
-
   return (
     <div className="CardList">
       {citiesList.map((city) => (

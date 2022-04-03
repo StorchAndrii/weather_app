@@ -1,8 +1,8 @@
-import React from "react";
-import "../App.css";
+import React, { memo } from "react";
+
 import { useWeather } from "../hooks/useWeather";
 
-export const Card = ({ city }) => {
+export const Card = memo(({ city }) => {
   const data = useWeather(city);
   // console.log("data", data);
   if (!data) return null;
@@ -28,4 +28,4 @@ export const Card = ({ city }) => {
       </div>
     </div>
   );
-};
+});
